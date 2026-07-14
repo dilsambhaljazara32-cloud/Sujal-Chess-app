@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#100f1f" />
+<title>Sujal Chess</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- SPLASH -->
+  <div id="screen-splash" class="screen">
+    <span class="deco d1">♜</span>
+    <span class="deco d2">♞</span>
+    <span class="deco d3">♛</span>
+    <span class="deco d4">♟</span>
+    <div class="splash-art-wrap">
+      <img src="img/splash-art.jpg" alt="Sujal Chess" class="splash-art" />
+    </div>
+    <button class="pill-btn" id="start-btn">♟&nbsp; Start</button>
+  </div>
+
+  <!-- MENU -->
+  <div id="screen-menu" class="screen">
+    <div class="menu-header">👑 Sujal Chess</div>
+    <div class="menu-art-wrap">
+      <img src="img/menu-art.jpg" alt="" class="menu-art" />
+    </div>
+    <div class="menu-heading">Ready to Play?</div>
+    <div class="menu-subtext">Test your skills. Beat your best.</div>
+
+    <div class="dice-select-label">Dice sides</div>
+    <div class="dice-select-row" id="dice-select-row"></div>
+
+    <div class="menu-play-wrap">
+      <button class="pill-btn" id="play-btn">▶&nbsp; PLAY</button>
+    </div>
+  </div>
+
+  <!-- BOARD -->
+  <div id="screen-board" class="screen">
+    <div class="board-header">
+      <div class="brand">👑 Sujal Chess</div>
+      <button class="ghost-btn" id="new-game-btn">New Game</button>
+    </div>
+
+    <div class="dice-panel dice-panel-top" id="panel-black">
+      <div class="die violet-die" id="die-black"></div>
+      <div class="dice-info">
+        <div class="owner-tag">Violet</div>
+        <div class="moves-txt" id="moves-black">Tap Roll to start</div>
+        <div class="dice-btn-row">
+          <button class="mini-btn violet-btn" id="roll-black">Roll</button>
+          <button class="mini-btn pass-btn" id="pass-black" style="display:none;">Pass</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-bar" id="status-bar"></div>
+
+    <div class="board-wrap"><div class="dc-board" id="board"></div></div>
+
+    <div class="dice-panel dice-panel-bottom" id="panel-white">
+      <div class="die gold-die" id="die-white"></div>
+      <div class="dice-info">
+        <div class="owner-tag">Gold</div>
+        <div class="moves-txt" id="moves-white">Tap Roll to start</div>
+        <div class="dice-btn-row">
+          <button class="mini-btn gold-btn" id="roll-white">Roll</button>
+          <button class="mini-btn pass-btn" id="pass-white" style="display:none;">Pass</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="captured-row">
+      <div class="captured" id="captured-white"><span class="captured-label">Gold captured</span></div>
+      <div class="captured" id="captured-black"><span class="captured-label">Violet captured</span></div>
+    </div>
+  </div>
+
+  <div class="winner-overlay" id="winner-overlay">
+    <div class="winner-card">
+      <div class="winner-text" id="winner-text"></div>
+      <button class="pill-btn" id="play-again-btn">Play Again</button>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
